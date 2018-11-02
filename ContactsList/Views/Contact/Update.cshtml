@@ -1,0 +1,48 @@
+﻿
+@{
+    ViewBag.Title = "Update";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+}
+@model ContactsList.Models.VM.ContactVM
+
+<form action="/Contact/Update" enctype="multipart/form-data" class="form-group" method="post">
+    <div class="form-group">
+        <label for="Name">
+            Ad
+        </label>
+        <input type="text" name="Name" class="form-control" value="@Model.Name" />
+    </div>
+    <div class="form-group">
+        <label for="SurName">
+            Soyad
+        </label>
+        <input type="text" class="form-control" name="SurName" value="@Model.SurName" />
+    </div>
+    <div class="form-group">
+        <label for="Company">
+            Şirket
+        </label>
+        <input type="text" name="Company" class="form-control" value="@Model.Company" />
+    </div>
+    <div class="form-group">
+        <label for="Phone">
+            Telefon
+        </label>
+        <input type="text" class="form-control" name="Phone" maxlength="11" value="@Model.Phone" />
+    </div>
+    <div class="form-group">
+        <label for="Mail">
+            Mail
+        </label>
+        <input type="email" class="form-control" name="Mail" value="@Model.Mail" />
+    </div>
+    <div class="form-group">
+        <label for="Image">
+            Resim
+        </label>
+        <input type="file" name="Image" value="@Model.ImagePath" />
+    </div>
+
+    <input type="text" style="visibility:hidden" name="ID" value="@Model.ID" />
+    <input type="submit" name="Save" value="Kaydet" class="form-control btn btn-primary" />
+</form>

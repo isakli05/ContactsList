@@ -1,0 +1,54 @@
+﻿
+@{
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+    ViewBag.title = "Yeni kişi Ekle";
+}
+
+<div class="card p-3">
+    <div class="card-header">
+        <a href="/Contact/List" class="btn btn-outline-success float-right">Kişi Listesi</a>
+        <h2>Yeni Kişi Ekle</h2>
+    </div>
+    <div class="card-body">
+        <form action="/Contact/Add" enctype="multipart/form-data" class="form-group" method="post">
+            <div class="form-group">
+                <label for="Name">
+                    Ad
+                </label>
+                <input type="text" name="Name" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label for="SurName">
+                    Soyad
+                </label>
+                <input type="text" class="form-control" name="SurName" />
+            </div>
+            <div class="form-group">
+                <label for="Company">
+                    Şirket
+                </label>
+                <input type="text" name="Company" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label for="Phone">
+                    Telefon
+                </label>
+                <input type="text" class="form-control" name="Phone" maxlength="11" />
+            </div>
+            <div class="form-group">
+                <label for="Mail">
+                    Mail
+                </label>
+                <input type="email" class="form-control" name="Mail" />
+            </div>
+            <div class="form-group">
+                <label for="Image">
+                    Resim
+                </label>
+                <input type="file" class="form-control" id="UploadImage" name="Image" />
+            </div>
+
+            <input type="submit" name="Save" value="Ekle" class="form-control btn btn-primary" />
+        </form>
+    </div>
+</div>

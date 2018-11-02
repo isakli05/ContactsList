@@ -1,0 +1,72 @@
+﻿
+@{
+    ViewBag.Title = "ContactDetail";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+}
+<link href="~/Content/css/Profile.css" rel="stylesheet" />
+@model ContactsList.Models.VM.ContactVM
+
+<div class="container emp-profile">
+    <form method="post">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="profile-img">
+                    <img src="@Model.ImagePath" alt="Profil Resmi" />
+                    
+                </div>
+            </div>
+            
+            
+        </div>
+        <div class="row">
+            <div class="col-md-8">
+                <div class="tab-content profile-tab" id="myTabContent">
+                    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label>İsim</label>
+                            </div>
+                            <div class="col-md-6">
+                                <p>@Model.Name</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label>Soyisim</label>
+                            </div>
+                            <div class="col-md-6">
+                                <p>@Model.SurName</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label>Şirket</label>
+                            </div>
+                            <div class="col-md-6">
+                                <p>@Model.Company</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label>Telefon</label>
+                            </div>
+                            <div class="col-md-6">
+                                <p>@Model.Phone</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label>Mail</label>
+                            </div>
+                            <div class="col-md-6">
+                                <p>@Model.Mail</p>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="/Contact/Update/@Model.ID" class="form-group btn btn-primary col-3">Güncelle</a>
+                    <a href="/Contact/Delete/@Model.ID" class="form-group btn btn-danger col-3">Sil</a>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
